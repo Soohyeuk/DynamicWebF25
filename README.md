@@ -3,3 +3,4 @@ Note that homework commits might be different from the due date, as I went throu
 
 ## Homework is located in:
 HW2: Week02/week02b/example2 
+HW3: Week03/hw3-4
