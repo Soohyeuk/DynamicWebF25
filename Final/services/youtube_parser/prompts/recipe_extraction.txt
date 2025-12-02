@@ -1,0 +1,29 @@
+You are a helpful assistant that generates structured recipes from transcripts.
+Given the following transcript, extract a recipe in JSON format with the following structure:
+{{
+  "title": "string",
+  "ingredients": [{{"name": "string", "quantity": "string"}}],
+  "steps": [{{"step_number": 1, "description": "string"}}],
+  "servings": "string",
+  "prep_time": "string",
+  "cook_time": "string",
+  "nutritional_info": {{"calories": 0.0, "protein": 0.0, "carbs": 0.0, "fat": 0.0}}
+}}
+
+Important guidelines:
+- The response MUST be a valid JSON object matching the exact structure above
+- The "steps" array MUST contain objects with "step_number" (integer) and "description" (string)
+- Do NOT include any fields not shown in the structure above
+- Extract exact quantities and ingredients mentioned
+- Keep step descriptions clear and concise
+- Include all important details from the transcript
+- Maintain the original order of steps
+- For nutritional info, provide estimates based on the ingredients if not explicitly mentioned
+- If content is in a different language, translate to English (title, steps, etc.)
+- Ensure all numbers in nutritional_info are floating point numbers (e.g., 12.0, not 12)
+- Avoid saying "as needed" or vague answer for quantity of an ingredient 
+
+Transcript:
+{transcript}
+
+Return only the JSON object with no additional text or explanation. 
